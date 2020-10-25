@@ -10,5 +10,7 @@ Jerry Bot is a differential drive mobile robot based on Robot Operating System (
 
 ## Jerry Simulation Model
 
-![jerry4](/home/sakthi/catkin_ws/src/jerry_bot/data/jerry4.png)
+![jerry4](data/jerry4.jpg)
+
+
 
