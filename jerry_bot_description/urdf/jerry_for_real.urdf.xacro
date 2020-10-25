@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<robot name="jerry_real" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:include filename="$(find jerry_bot_description)/urdf/jerry_description.urdf.xacro"/>
+</robot>

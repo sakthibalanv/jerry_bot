@@ -1,0 +1,15 @@
+<launch>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find jerry_bot_description)/urdf/jerry_on_sim.urdf.xacro"/>
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    </node>
+    
+    <!-- Combine joint values -->    
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+
+    <!-- Todo joint state values needs to be published -->
+
+    <!-- Show in RVIZ   -->
+    <!-- <node pkg="rviz" type="rviz" name="rviz" /> -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find jerry_bot_description)/rviz/rviz_gazebo.rviz"/>
+</launch>

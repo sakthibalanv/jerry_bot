@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<robot name="xacro_properties" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- Init colour -->
+    <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+    </material>
+    <material name="dark">
+        <color rgba="0.3 0.3 0.3 1.0"/>
+    </material>
+    <material name="light_black">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+    </material>
+    <material name="blue">
+        <color rgba="0.0 0.0 0.8 1.0"/>
+    </material>
+    <material name="green">
+        <color rgba="0.0 0.8 0.0 1.0"/>
+    </material>
+    <material name="grey">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+    </material>
+    <material name="orange">
+        <color rgba="${255/255} ${108/255} ${10/255} 1.0"/>
+    </material>
+    <material name="brown">
+        <color rgba="${222/255} ${207/255} ${195/255} 1.0"/>
+    </material>
+    <material name="red">
+        <color rgba="0.8 0.0 0.0 1.0"/>
+    </material>
+    <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/jerrybot</robotNamespace>
+        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        <!-- <robotSimType>icart_mini_gazebo/ICartMiniHWSim</robotSimType> -->
+        </plugin>
+    </gazebo>
+
+    
+
+    <xacro:macro name="stiff_material_gazebo">
+        <mu1>10.0</mu1>
+        <mu2>10.0</mu2>
+        <kp>100000.0</kp>
+        <kd>100000.0</kd>
+    </xacro:macro>
+
+    <xacro:macro name="param_inertia" params="mass Ixx Iyy Izz">
+        <inertial>
+            <xacro:default_origin />
+            <mass value="${mass}"/>
+            <inertia ixx="${Ixx}" ixy="0.0" ixz="0.0" iyy="${Iyy}" iyz="0.0" izz="${Izz}"/>
+        </inertial>
+    </xacro:macro>
+
+    <xacro:macro name="servo_macro" params="joint_name">
+        <transmission name="${joint_name}_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${joint_name}">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${joint_name}_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+    </xacro:macro>
+    
+
+    
+
+</robot>
