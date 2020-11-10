@@ -11,6 +11,9 @@ find_package(catkin REQUIRED COMPONENTS
   controller_manager
   hardware_interface
   joy
+  roscpp
+  rospy
+  std_msgs
   teleop_twist_joy
 )
 
@@ -71,7 +74,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
+#   std_msgs
 # )
 
 ################################################
@@ -106,7 +109,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES jerry_bot_driver
-#  CATKIN_DEPENDS controller_manager hardware_interface joy teleop_twist_joy
+#  CATKIN_DEPENDS controller_manager hardware_interface joy roscpp rospy std_msgs teleop_twist_joy
 #  DEPENDS system_lib
 )
 
