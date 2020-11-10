@@ -2,6 +2,7 @@
 
     <include file="$(find jerry_bot_description)/launch/jerry_bot_real.launch" />
     <include file="$(find jerry_bot_driver)/launch/jerry_bot_driver.launch" />
+    <include file="$(find jerry_bot_control)/launch/control.launch" />
 
     <node name="rosserial_uc" pkg="rosserial_python" type="serial_node.py" respawn="false" output="screen" ns="jerry_bot" args="_port:=/dev/ttyUSB0" />
 
