@@ -16,7 +16,8 @@
                 "/home/sakthi/catkin_ws/src/rosserial/rosserial_server/include/**",
                 "/home/sakthi/catkin_ws/src/rosserial/rosserial_test/include/**",
                 "/home/sakthi/catkin_ws/src/turtle_snake_game/include/**",
-                "/usr/include/**"
+                "/usr/include/**",
+                "/opt/ros/noetic/include"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",
