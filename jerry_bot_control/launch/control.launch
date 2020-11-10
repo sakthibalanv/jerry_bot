@@ -1,0 +1,14 @@
+<launch>
+    <rosparam command="load" file="$(find jerry_bot_control)/config/jerry_bot_control.yaml"/>
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" ns="jerry_bot" args="joint_state_controller
+                                            mobile_base_controller"/>
+
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        ns="jerry_bot" respawn="false" output="screen">
+        <remap from="/joint_states" to="/jerry_bot/joint_states" />
+        <!-- param name="publish_frequency" type="double" value="30.0" /-->
+    </node>
+</launch>

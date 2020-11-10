@@ -1,0 +1,8 @@
+<launch>
+
+    <include file="$(find diffbot_base)/launch/diffbot.launch" />
+    
+    <node name="motor_driver" pkg="grove_motor_driver" type="motor_driver.py" respawn="false" output="screen" ns="diffbot" />
+
+    <node name="rosserial_uc" pkg="rosserial_python" type="serial_node.py" respawn="false" output="screen" ns="diffbot" args="_port:=/dev/ttyACM0" />
+</launch>
