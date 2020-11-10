@@ -1,8 +1,11 @@
 <launch>
 
-    <include file="$(find diffbot_base)/launch/diffbot.launch" />
-    
-    <node name="motor_driver" pkg="grove_motor_driver" type="motor_driver.py" respawn="false" output="screen" ns="diffbot" />
+    <include file="$(find jerry_bot_description)/launch/jerry_bot_real.launch" />
+    <include file="$(find jerry_bot_driver)/launch/jerry_bot_driver.launch" />
 
-    <node name="rosserial_uc" pkg="rosserial_python" type="serial_node.py" respawn="false" output="screen" ns="diffbot" args="_port:=/dev/ttyACM0" />
+    <node name="rosserial_uc" pkg="rosserial_python" type="serial_node.py" respawn="false" output="screen" ns="jerry_bot" args="_port:=/dev/ttyUSB0" />
+
+    <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering">
+        <param name="default_topic" value="/jerry_bot/mobile_base_controller/cmd_vel"/>
+    </node>
 </launch>

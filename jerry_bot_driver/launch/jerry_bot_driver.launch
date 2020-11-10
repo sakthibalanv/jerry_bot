@@ -1,0 +1,3 @@
+<launch>
+	<node name="jerry_bot_hw_interface" pkg="jerry_bot_driver" type="jerry_bot_hw_interface" ns="jerry_bot" output="screen"/>    
+</launch>
