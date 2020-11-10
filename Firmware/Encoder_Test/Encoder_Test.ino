@@ -10,19 +10,31 @@
 #define R_M_A 7
 #define R_M_B 8
 
-#define L_M_Speed 9
+#define L_M_Speed 11
 #define L_M_A 10
-#define L_M_B 11
+#define L_M_B 9
 
-volatile unsigned int R_Ticks = 0, L_Ticks = 0;
+volatile long R_Ticks = 0, L_Ticks = 0;
+long newTicks = 0, oldTicks = 0;
 boolean L_A_set, R_A_set;
 boolean L_B_set, R_B_set;
 
-long counter = 0;
+unsigned long counter = 0;
 
-int stageDel = 1000;
+unsigned long stageDel = 5000;
 int speedCounter = 0;
-int speedStep = 25;
+int speedStep = 10;
+
+// counts per rev found was 2520, i.e 90 ratio gearbox for 200rpm
+// 28 TICKS PER REV ON MOTOR SIDE.
+// rated torque 6.5kgcm
+// L motor 22.16rad/sec -22.6rad/sec
+// L motor 158 rad/sec2 -163rad/sec2
+
+// R motor 21.4rad/sec -22.6rad/sec
+// R motor 157rad/sec2 -161rad/sec2
+float vel = 0;
+float oldVel = 0, maxAccel = 0, accel = 0;
 
 void setup()
 {
@@ -46,11 +58,35 @@ void setup()
 
   Serial.begin (9600);
 
-  counter = millis();
+  
+  /*digitalWrite(R_M_A, HIGH);
+  digitalWrite(R_M_B, LOW);
+  
+  counter = millis() + 100;
+  analogWrite(R_M_Speed, 255);*/
+
+  
+  
+  //counter = millis();
 }
+
 
 void loop() 
 {
+
+  /*if(counter < millis())
+  {
+    newTicks = R_Ticks;
+    counter = millis() + 100;
+    // v = (change in ticks / Ticks per rev) / 1
+    vel = ((newTicks - oldTicks)*10/ 2520.0); // rps
+    accel = (vel - oldVel)*10; //rps2
+    oldVel = vel;
+    maxAccel = maxAccel > accel ? accel : maxAccel;
+    oldTicks = newTicks;
+    Serial.println(vel);    
+  }*/
+
   
 
   /*if(millis() < counter + stageDel)
@@ -97,7 +133,7 @@ void loop()
     Serial.print(speedCounter);
     Serial.print('\t');
   }
-  else if(millis() < counter + stageDel)
+  else if(millis() < counter + 5 * stageDel)
   {
     digitalWrite(R_M_A, LOW);
     digitalWrite(R_M_B, HIGH);
@@ -108,7 +144,7 @@ void loop()
     Serial.print(speedCounter);
     Serial.print('\t');
   }
-  else if(millis() < counter + 2 * stageDel)
+  else if(millis() < counter + 6 * stageDel)
   {
     digitalWrite(R_M_A, LOW);
     digitalWrite(R_M_B, HIGH);
@@ -119,7 +155,7 @@ void loop()
     Serial.print(speedCounter);
     Serial.print('\t');
   }
-  else if(millis() < counter + 3 * stageDel)
+  else if(millis() < counter + 7 * stageDel)
   {
     digitalWrite(R_M_B, LOW);
     digitalWrite(R_M_A, HIGH);
@@ -130,7 +166,7 @@ void loop()
     Serial.print(speedCounter);
     Serial.print('\t');
   }
-  else if(millis() < counter + 4 * stageDel)
+  else if(millis() < counter + 8 * stageDel)
   {
     digitalWrite(R_M_B, LOW);
     digitalWrite(R_M_A, HIGH);
@@ -140,7 +176,7 @@ void loop()
     analogWrite(R_M_Speed, speedCounter);
     Serial.print(speedCounter);
     Serial.print('\t');
-  }*/
+  }
 
   
   
@@ -148,7 +184,7 @@ void loop()
   Serial.print(L_Ticks);
   Serial.print('\t');
   Serial.println(R_Ticks);
-
+*/
 }
 
 void R_EN_A_CB() {

@@ -25,7 +25,7 @@
     
     <gazebo>
         <plugin name="jerry_diff_controller" filename="libgazebo_ros_diff_drive.so">
-        <commandTopic>cmd_vel</commandTopic>
+        <commandTopic>gazebo/cmd_vel</commandTopic>
         <odometryTopic>odom</odometryTopic>
         <odometryFrame>odom</odometryFrame>
         <odometrySource>world</odometrySource>
