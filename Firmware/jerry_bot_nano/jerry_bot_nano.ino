@@ -55,7 +55,7 @@ ros::Publisher pub("/jerry_bot/uc_states", &joint_state);
 
 unsigned long counter = 0;
 
-const int counter_ms = 20;
+const int counter_ms = 10;
 
 float INC_LMT = 250;
 float LKp = 25, LKi = 0.2, LKd = 0.0; 
