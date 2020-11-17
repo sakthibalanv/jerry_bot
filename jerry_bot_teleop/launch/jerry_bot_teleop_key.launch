@@ -1,4 +1,4 @@
 <launch>
-  <node pkg="jerry_bot_teleop" type="jerry_bot_teleop_key" name="jerry_bot_teleop_keyboard"  output="screen">
+  <node pkg="jerry_bot_teleop" type="jerry_bot_teleop_key.py" name="jerrybot_teleop"  output="screen">
   </node>
 </launch>
