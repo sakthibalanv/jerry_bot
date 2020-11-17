@@ -10,12 +10,12 @@
 #define L_EN_B 4
 
 #define R_M_Speed 6
-#define R_M_A 7
-#define R_M_B 8
+#define R_M_A 8
+#define R_M_B 7
 
 #define L_M_Speed 11
-#define L_M_A 10
-#define L_M_B 9
+#define L_M_A 9
+#define L_M_B 10
 
 
 // counts per rev found was 2520, i.e 90 ratio gearbox for 200rpm
@@ -175,12 +175,12 @@ void L_Move(float vel)
 
 void R_EN_A_CB() {
   R_A_set = digitalRead(R_EN_A) == HIGH;
-  R_Ticks += (R_A_set != R_B_set) ? +1 : -1;
+  R_Ticks += (R_A_set != R_B_set) ? -1 : +1;
 }
 
 void R_EN_B_CB() {
   R_B_set = digitalRead(R_EN_B) == HIGH;
-  R_Ticks += (R_A_set == R_B_set) ? +1 : -1;
+  R_Ticks += (R_A_set == R_B_set) ? -1 : +1;
 }
 
 void L_EN_A_CB() {
