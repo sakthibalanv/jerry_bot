@@ -19,7 +19,7 @@
     <arg name="local_planner" value="$(arg local_planner)" />
     <arg name="move_forward_only" value="$(arg move_forward_only)"/>
     <arg name="cmd_vel_topic" value="/jerry_bot/mobile_base_controller/cmd_vel" />
-    <arg name="cmd_vel_topic" value="/jerry_bot/mobile_base_controller/odom" />
+    <arg name="odom_topic" value="/jerry_bot/mobile_base_controller/odom" />
   </include>
 
   <!-- rviz -->
