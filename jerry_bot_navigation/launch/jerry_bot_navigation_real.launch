@@ -23,10 +23,10 @@
   </include>
 
   <!-- rviz -->
-  <group if="$(arg open_rviz)"> 
+  <!-- <group if="$(arg open_rviz)"> 
     <node pkg="rviz" type="rviz" name="rviz" required="true"
           args="-d $(find jerry_bot_navigation)/rviz/jerry_bot_navigation.rviz"/>
-  </group>
+  </group> -->
 </launch>
 
 
