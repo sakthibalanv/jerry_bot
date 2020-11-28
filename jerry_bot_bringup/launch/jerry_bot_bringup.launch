@@ -9,4 +9,6 @@
     <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering">
         <param name="default_topic" value="/jerry_bot/mobile_base_controller/cmd_vel"/>
     </node>
+
+    <include file="$(find rplidar_ros)/launch/rplidar.launch" />
 </launch>
