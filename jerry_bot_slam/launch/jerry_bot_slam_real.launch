@@ -10,7 +10,7 @@
 
   <!-- SLAM: Gmapping, Cartographer, Hector, Karto, Frontier_exploration, RTAB-Map -->
   <include file="$(find jerry_bot_slam)/launch/jerry_bot_$(arg slam_methods).launch">
-    <arg name="set_odom_frame" default="/jerry_bot/mobile_base_controller/odom"/>
+    <!-- <arg name="set_odom_frame" default="/jerry_bot/mobile_base_controller/odom"/> -->
   </include>
 
   <!-- rviz -->
