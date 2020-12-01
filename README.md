@@ -21,7 +21,8 @@ roslaunch jerry_bot_gazebo jerry_turtlebotworld.launch
 
 ## Jerry Physical Robot
 Jerry Bot Making video can be found on the link below
-[![Jerry Bot Making](https://img.youtube.com/vi/https://youtu.be/2tfIN2R6Qrg/0.jpg)](https://www.youtube.com/watch?v=2tfIN2R6Qrg)
+[![Jerry Bot Making Video Link](https://img.youtube.com/vi/2tfIN2R6Qrg/0.jpg)](https://www.youtube.com/watch?v=2tfIN2R6Qrg)
+
 
 
 
@@ -36,12 +37,13 @@ Jerry Bot Making video can be found on the link below
 <img src="data/jerry4.jpg" style="zoom:80%;" />
 
 ## Jerry Bot Navigation Video Links
+[![Jerry Bot Autonomous Navigation Video Link](https://img.youtube.com/vi/WxPS_vEyv7k/0.jpg)](https://www.youtube.com/watch?v=WxPS_vEyv7k)
 
-[![Jerry Autonomous Navigation](https://youtu.be/WxPS_vEyv7k/0.jpg)](https://youtu.be/WxPS_vEyv7k)
+
 
 ## Jerry Bot Navigation in Narrow Door space
 
-[![Jerry Autonomous Navigation](https://youtu.be/2JQMv-HHEQY/0.jpg)](https://youtu.be/2JQMv-HHEQY)
+[![Jerry Bot Autonomous Navigation Video Link](https://img.youtube.com/vi/2JQMv-HHEQY/0.jpg)](https://www.youtube.com/watch?v=2JQMv-HHEQY)
 
 ## Further Work
 * Using IMU and EKF package for better pose estimate.
