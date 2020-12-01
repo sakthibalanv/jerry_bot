@@ -25,8 +25,9 @@ https://www.youtube.com/watch?v=2tfIN2R6Qrg
 
 <img src="data/jerry_physical.jpg" style="zoom:5%;" />
 
+[![Jerry Bot Making](https://www.youtube.com/watch?v=2tfIN2R6Qrg/0.jpg)](https://www.youtube.com/watch?v=2tfIN2R6Qrg "Jerry Bot Making")
 
-[![Jerry Bot Making](https://www.youtube.com/watch?v=2tfIN2R6Qrg/0.jpg)](https://www.youtube.com/watch?v=2tfIN2R6Qrg)
+
 
 ## Jerry Simulation Model
 
