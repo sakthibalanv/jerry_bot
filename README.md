@@ -21,11 +21,11 @@ roslaunch jerry_bot_gazebo jerry_turtlebotworld.launch
 
 ## Jerry Physical Robot
 Jerry Bot Making video can be found on the link below
-https://www.youtube.com/watch?v=2tfIN2R6Qrg
+[![Jerry Bot Making](https://youtu.be/2tfIN2R6Qrg/0.jpg)](https://youtu.be/2tfIN2R6Qrg "Jerry Bot Making")
 
 <img src="data/jerry_physical.jpg" style="zoom:5%;" />
 
-[![Jerry Bot Making](https://youtu.be/2tfIN2R6Qrg/0.jpg)](https://youtu.be/2tfIN2R6Qrg "Jerry Bot Making")
+
 
 
 
